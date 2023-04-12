@@ -12,23 +12,13 @@
 // getSummary: a function that should summarize your total balances. It should show your total
 // income, your total expenses and also calculate your current balances (income - expenses).
 
-//const amount = parseFloat(prompt("How much was your expense?"));
-
-//const accountName = prompt("What is your name?");
-//let addIncome = prompt("Please add your income here:");
-//let addExpense = prompt("Please add your expense here:");
-
-
 
 const account = {
   name: "Klara",
 
   myName: function() {
   const accountName = prompt("What is your name?");
-   console.log(accountName);
-   //return accountName;
    this.name = accountName
-   console.log(this.name)
    
   },
 
@@ -41,18 +31,11 @@ const account = {
   expenses: [],
   
   addIncome: function () {
-    // vad det var för nåt är sparat i type
-    const myIncome = parseFloat(prompt("How much was your income?"));
-    // sparar type och amount som ett objekt
-    this.income.push(myIncome);
-    // [{type, amount}, {type, amount}, {type, amount}]
-    console.log(this.income);
-  },
- // addIncome: function () {
-   //this.income.push(parseFloat(prompt("How much was your income?")));
-  // return income + this.addIncome;
   
-  //},
+    const myIncome = parseFloat(prompt("How much was your income?"));
+   
+    this.income.push(myIncome);
+     },
 
   addExpenses: function () {
     // vad det var för nåt är sparat i type
@@ -63,21 +46,28 @@ const account = {
     // sparar type och amount som ett objekt
     this.expenses.push({ type, amount });
     // [{type, amount}, {type, amount}, {type, amount}]
-    console.log(this.expenses);
   },
-
-  //addExpense: function () {
-   
-    //this.expenses.push(parseFloat(prompt("Please add your expense here:")));
-    //console.log(this.expenses)
-    //return addExpense;
-
-  //},
 
   listExpense: function () {
-   for (let i= 0; i <this.expenses.length; i++);
-    alert(`A list of your expenses: ${this.expenses}`);
-  },
+    let expenseList = account.expenses;
+    
+
+    account.expenses.forEach(function (expenseList) {
+      for (let i= 0; i <account.expenses.length; i++){
+
+        expenseList = expenseList + account.expenses[i];
+      }
+      
+      }),
+
+      alert(`A list of your expenses: ${expenseList}`);
+      
+
+    },
+
+    //^ Här visas listan i alert som [object Object],[object Object] osv. istället för det verkliga innehållet i listan.
+    // Har provat massor av möjliga lösningar. Något har jag missat.
+    //Kan inte lista ut varför.
 
   getSummary: function() {
     let totalExpenses = 0;
@@ -139,8 +129,6 @@ function menu() {
   menu();
 }
 }
-
-//myName();
 
 menu();
 
