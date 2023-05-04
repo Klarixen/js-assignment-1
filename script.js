@@ -49,16 +49,16 @@ const account = {
   },
 
   listExpense: function () {
-    let expenseList = account.expenses;
+    let expenseList = "";
     
 
-    account.expenses.forEach(function (expenseList) {
-      for (let i= 0; i <account.expenses.length; i++){
+    this.expenses.forEach(function (expense) {
+    
+      expenseList += ("\n") + expense.type + ": " + expense.amount + ("\n");
 
-        expenseList = expenseList + account.expenses[i];
-      }
+       // Här tog jag bort for-loopen och gjorde en forEach-loop som i de andra uträkningarna nedan.
       
-      }),
+     }),
 
       alert(`A list of your expenses: ${expenseList}`);
       
